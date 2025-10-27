@@ -1,1 +1,70 @@
 Estilização da página inicial em CSS
+.pesquisa-bar {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.pesquisa-bar input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+.pesquisa-bar button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.pesquisa-bar button:hover {
+    background-color: #ccc;
+}
+
+main h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: #000;
+}
+
+.produtos-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.produto-card {
+    border: 1px solid yellow;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    background-color: #000;
+}
+
+.produto-card img {
+    width: 100%;
+    height: auto;
+}
+
+.preco {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.produto-card button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.produto-card button:hover {
+    background-color: #333;
+}
