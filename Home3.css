@@ -1,113 +1,127 @@
-Estilização da página inicial em CSS
- body {
-            font-family: Arial, sans-serif;
-            background-color: #bdbd8b;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #000;
-            color: #fff;
-            padding: 10px 20px;
-            border-bottom: 3px solid yellow;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            width: 50px;
-            margin-right: 10px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav ul li a:hover {
-            color: yellow;
-        }
-.pesquisa-bar {
-    display: flex;
-    justify-content: center;
-    padding: 15px;
-}
-
-.pesquisa-bar input {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
-}
-
-.pesquisa-bar button {
-    padding: 5px 10px;
-    border: none;
+body {
+    margin: 0;
+    padding: 0;
     background-color: #000;
-    color: #fff;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
+    color: white;
+    font-family: 'Arial', sans-serif;
 }
 
-.pesquisa-bar button:hover {
-    background-color: #ccc;
-}
-
-main h2 {
-    text-align: center;
-    margin: 20px 0;
-    color: #000;
-}
-
-.produtos-container {
+header {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-}
-
-.produto-card {
-    border: 1px solid yellow;
-    padding: 10px;
-    width: 200px;
-    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
     background-color: #000;
 }
 
-.produto-card img {
-    width: 100%;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    width: 60px;
     height: auto;
 }
 
-.preco {
-    font-weight: bold;
-    margin: 10px 0;
+.logo h1 {
+    font-size: 24px;
+    color: #FFD700;
+    margin: 0;
 }
 
-.produto-card button {
-    background-color: #fff;
-    color: #000;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 4px;
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
 }
 
-.produto-card button:hover {
-    background-color: #333;
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+}
+
+.divisoria {
+    width: 100%;
+    height: 20px;
+    background: url('arame.png') repeat-x center;
+    background-size: contain;
+    border-bottom: 2px solid #FFD700;
+}
+
+.produtos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 60px 0;
+    background-color: #000;
+}
+
+.produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    padding:10px;
+}
+
+.imagem-produto {
+    width: 150px;
+    height: px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 6px solid #FFD700;
+    border-radius: 10px;
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagem-produto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #FFD70044;
+}
+
+.produto p {
+    padding: 5px;
+    font-size: 16px;
+    color: #f2f2f2;
+    margin: 0;
+}
+
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    border-top: 2px solid #FFD700;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .produtos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imagem-produto {
+        width: 180px;
+        height: 180px;
+    }
 }
