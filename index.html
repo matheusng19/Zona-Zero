@@ -5,64 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zona Zero - Loja Virtual</title>
-     <style> 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #bdbd8b;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #000;
-            color: #fff;
-            padding: 10px 20px;
-            border-bottom: 3px solid yellow;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            width: 50px;
-            margin-right: 10px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav ul li a:hover {
-            color: yellow;
-        }
+    <link rel=""stylesheet" href="Home3.css">
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <img src="./img/" alt="Logo da Loja">
-            <h1>Zona Zero</h1>
+            <img src="./img/" alt="Logo ZZ">
         </div>
 
-        <nav>
+        nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Meu Carrinho</a></li>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Produtos</a></li>
+                <li><a href="#">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -83,22 +39,30 @@
                 <button>Comprar</button>
             </div>
 
-            <div class="produto-card">
-                <img src="img/" alt="Produto 2">
-                <h3>Camisa Cinza Estampa</h3>
-                <p class="preco">R$ 89,90</p>
-                <button>Comprar</button>
-            </div>
+            <div class="divisoria"></div>
 
-            <div class="produto-card">
-                <img src="img/" alt="Produto 3">
-                <h3>Camisa Preta Logo</h3>
-                <p class="preco">R$ 79,90</p>
-                <button>Comprar</button>
-            </div>
+    <section class="produtos">
+        <div class="produto">
+            <div class="imagem-produto"></div>
+            <p>Camiseta Oversized Preta Logo Zona Zero</p>
+            <p>R$69,99</p>
         </div>
-    </main>
+
+        <div class="produto">
+            <div class="imagem-produto"></div>
+            <p>Camisa Oversized Cinza Minimalista</p>
+            <p>R$69,99</p>
+        </div>
+
+        <div class="produto">
+            <div class="imagem-produto"></div>
+            <p>Camisa Branca Oversized Logo Zona Zero</p>
+            <p>R$69,99</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Zona Zero - Todos os direitos reservados.</p>
+    </footer>
 </body>
-
 </html>
-
