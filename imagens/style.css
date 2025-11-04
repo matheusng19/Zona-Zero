@@ -81,16 +81,16 @@ nav ul li a:hover {
 }
 
 /* imagens */
-.produto:nth-child(1) .imagem-prsoduto {
-    background-image: url('Camiseta\ Preta\ com\ Logo\ ZZ.png'); /* troque pelo nome da sua imagem */
+.produto:nth-child(1) .imagem-produto {
+    background-image: url('Camiseta\ Preta\ com\ Logo\ ZZ.png'); 
 }
 
 .produto:nth-child(2) .imagem-produto {
-    background-image: url('Camiseta\ Cinza\ com\ Estampa\ de\ Fio\ Maranhão.png'); /* troque aqui */
+    background-image: url('Camiseta\ Cinza\ com\ Estampa\ de\ Fio\ Maranhão.png');
 }
 
 .produto:nth-child(3) .imagem-produto {
-    background-image: url('Camiseta\ Estilo\ Streetwear\ com\ ZZ.png'); /* troque aqui */
+    background-image: url('Camiseta\ Estilo\ Streetwear\ com\ ZZ.png'); 
 }
 
 /* estilo das imagens */
