@@ -1,28 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zona Zero - Loja Virtual</title>
+    <title>Login - ZZ Street Wear</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Login</h1>
+    <header>
+        <h1 class="logo">ZZ <span>Street Wear</span></h1>
+        <a href="#" class="register-btn">Registre-se</a>
+    </header>
 
-    <form action="imagens/index.html" method="post">
-
-        <label for="E-mail">Senha:</label>
-        <input type="email" id="email" name="email" required>
-        <br><br>
-
-        <label for="username">Usuário:</label>
-        <input type="text" id="username" name="username" required>
-        <br><br>
-
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required>
-        <br><br>
-        
-        <input type="submit" value="Entrar">
-    </form>
+    <main>
+        <div class="login-box">
+            <h2>Login</h2>
+            <form action="pagina-principal.html" method="post">
+                <input type="email" name="email" placeholder="Digite seu e-mail" required>
+                <input type="password" name="senha" placeholder="Digite sua senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+    </main>
 </body>
 </html>
