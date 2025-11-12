@@ -94,9 +94,16 @@ nav ul li a:hover {
 }
 
 .produto:nth-child(4) .imagem-produto {
-    background-image: url('Camiseta\ Estilo\ Streetwear\ com\ ZZ.png'); 
+    background-image: url('WhatsApp\ Image\ 2025-11-11\ at\ 21.54.01.jpeg'); 
 }
 
+.produto:nth-child(5) .imagem-produto {
+    background-image: url('WhatsApp\ Image\ 2025-11-11\ at\ 21.55.17.jpeg'); 
+}
+
+.produto:nth-child(6) .imagem-produto {
+    background-image: url('WhatsApp\ Image\ 2025-11-11\ at\ 21.55.33.jpeg'); 
+}
 /* estilo das imagens */
 .imagem-produto {
     width: 200px;
