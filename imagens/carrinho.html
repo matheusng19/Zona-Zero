@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - Zona Zero</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="Logo1.png" class="logo-img" alt="Logo Zona Zero">
+            <h1>Zona Zero</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li> 
+                <li><a href="carrinho.html">Meu Carrinho<span id="cart-count">0</span></a></li>
+                <li><a href="#">Produtos</a></li>
+                <li><a href="PagLogin.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="divisoria"></div>
+
+    <main class="carrinho-pagina">
+        <h2>Seu Carrinho</h2>
+        
+        <div id="carrinho-container">
+            <p id="carrinho-vazio-msg">Seu carrinho está vazio.</p>
+        </div>
+
+        <div id="carrinho-resumo" style="display: none;">
+            <h3>Total: <span id="cart-total">R$0,00</span></h3>
+            <button id="limpar-carrinho-btn">Limpar Carrinho</button>
+            <button id="checkout-btn">Finalizar Compra</button>
+        </div>
+    </main>
+
+
+    <footer>
+        <p>&copy; 2025 Zona Zero - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="carrinho.js" defer></script>
+    <script src="script.js" defer></script> 
+</body>
+</html>
