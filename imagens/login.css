@@ -1,4 +1,4 @@
-/* Global */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@
     height: auto;
 }
 
-/* página */
+
 body {
     background-color: #000000;
     display: flex;
