@@ -1,79 +1,187 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zona Zero - Street Wear</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zona Zero - Street Wear</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <script src="script.js" defer></script>
-    <!-- Cabeçalho -->
-    <header>
-        <div class="logo">
-            <img src="Logo1.png" class="logo-img" alt="Logo Zona Zero">
-            <h1>Zona Zero</h1>
-        </div>
+  <script src="script.js" defer></script>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">
+      <img src="./img/Logo1-removebg-preview.png" class="logo-img" alt="Logo Zona Zero">
+    </div>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="#">Produtos</a></li>
-                <li><a href="carrinho.html">Meu carrinho</a></li>
-                <li><a href="PagLogin.html">Login</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="#">Produtos</a></li>
+        <li><a href="carrinho.html">Meu carrinho</a></li>
+        <li><a href="PagLogin.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Divisória -->
-    <div class="divisoria"></div>
+  <!-- Divisória -->
+  <div class="divisoria"></div>
 
-    <!-- Seção de produtos -->
-    <section class="produtos">
-        <div class="produto">
-            <div class="imagem-produto"></div>
-            <p>Camiseta Oversized Preta Logo Zona Zero</p>
-            <p>R$69,99</p>
-        </div>
+  <!-- Seção de produtos -->
+  <section class="produtos">
+    <div class="produto">
+      <div class="imagem-produto">
+        <img src="./img/Camiseta Preta com Logo ZZ.png">
+      </div>
+      <p>Camiseta Oversized Preta</p>
+      <p>R$69,99</p>
+      <button class="btn-comprar" data-img="./img/Camiseta Preta com Logo ZZ.png">Comprar</button>
+    </div>
 
-        <div class="produto">
-            <div class="imagem-produto"></div>
-            <p>Camisa Oversized Cinza Minimalista</p>
-            <p>R$69,99</p>
-        </div>
+    <div class="produto">
+      <div class="imagem-produto">
+        <img src="./img/Camiseta Cinza com Estampa de Fio Maranhão.png">
+      </div>
+      <p>Camisa Oversized <br>Cinza Minimalista</p>
+      <p>R$69,99</p>
+      <button class="btn-comprar" data-img="./img/Camiseta Cinza com Estampa de Fio Maranhão.png">Comprar</button>
+    </div>
 
-        <div class="produto">
-            <div class="imagem-produto"></div>
-            <p>Camisa Branca Oversized Logo Zona Zero</p>
-            <p>R$69,99</p>
-        </div>
+    <div class="produto">
+      <div class="imagem-produto">
+        <img src="./img/Camiseta Estilo Streetwear com ZZ.png">
+      </div>
+      <p>Camisa Branca Oversized</p>
+      <p>R$69,99</p>
+      <button class="btn-comprar" data-img="./img/Camiseta Estilo Streetwear com ZZ.png">Comprar</button>
 
-         <div class="produto">
-            <div class="imagem-produto"></div>
-            <p>Kit 4 ADesivos Street Art</p>
-            <p>R$19,90</p>
-        </div>
+    </div>
 
-        <div class="produto">
-            <div class="imagem-produto"></div>
-            <p>Chaveiro Zona Zero Streetwear</p>
-            <p>R$14,99</p>
-        </div>
+    <div class="produto">
+      <div class="imagem-produto">
+        <img src="./img/4 adesivos.jpeg">
+      </div>
+      <p>Kit 4 ADesivos Street Art</p>
+      <p>R$19,90</p>
+     <button class="btn-comprar" data-img="./img/4 adesivos.jpeg">Comprar</button>
 
-        <div class="produto">
-            <div class="imagem-produto"></div>
-            <p>Adesivo Zero</p>
-            <p>R$5,00</p>
-        </div>
-    </section>
+    </div>
 
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2025 Zona Zero - Todos os direitos reservados.</p>
-    </footer>
+    <div class="produto">
+      <div class="imagem-produto">
+        <img src="./img/chaveiro.jpeg">
+      </div>
+      <p>Chaveiro Zona Zero Streetwear</p>
+      <p>R$14,99</p>
+      <button class="btn-comprar" data-img="./img/chaveiro.jpeg">Comprar</button>
+    </div>
+
+    <div class="produto">
+      <div class="imagem-produto">
+        <img src="./img/adesivo.jpeg">
+      </div>
+      <p>Adesivo Zero</p>
+      <p>R$5,00</p>
+      <button class="btn-comprar" data-img="./img/adesivo.jpeg">Comprar</button>
+
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Zona Zero - Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- MODAL DE PRODUTO -->
+  <div id="modal-produto" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModalProduto">&times;</span>
+
+      <h2>Detalhes do Produto</h2>
+      <p id="nome-produto"></p>
+      <img id="modal-img" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
+
+      <label>Tamanho:</label>
+      <select id="tamanho">
+        <option>P</option>
+        <option>M</option>
+        <option>G</option>
+        <option>GG</option>
+      </select>
+
+      <label>Quantidade:</label>
+      <input type="number" id="quantidade" min="1" value="1">
+
+      <div class="modal-buttons">
+        <button class="btn-carrinho">Adicionar ao Carrinho</button>
+        <button class="btn-finalizar" id="btnAbrirPagamento">Finalizar Compra</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE PAGAMENTO -->
+  <div id="modal-pagamento" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModalPagamento">&times;</span>
+
+      <h2>Finalizar Compra</h2>
+
+      <label>Forma de Pagamento:</label>
+      <select id="pagamento">
+        <option>Pix</option>
+        <option>Crédito</option>
+        <option>Débito</option>
+        <option>Dinheiro</option>
+      </select>
+
+      <label>Endereço de Entrega:</label>
+      <textarea id="endereco" rows="3" placeholder="Rua, número, bairro, cidade..."></textarea>
+
+      <button class="btn-whatsapp" id="btnWhatsapp">Finalizar no WhatsApp</button>
+    </div>
+  </div>
+
+  <div id="added-message">Produto adicionado!</div>
+  <!-- Toast de mensagem -->
+  <div id="toast" class="toast hidden">Produto adicionado ao carrinho!</div>
+
+  <style>
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #0a0a0a;
+      color: #00aaff;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 15px;
+      opacity: 0;
+      transition: opacity .4s ease, transform .4s ease;
+      transform: translateY(20px);
+      z-index: 99999;
+      border: 1px solid #00aaff55;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+  <script>
+    function showToast(msg) {
+      const toast = document.getElementById("toast");
+      toast.textContent = msg;
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2500);
+    }
+  </script>
+
 </body>
 
 </html>
-
-
