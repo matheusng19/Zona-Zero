@@ -3,10 +3,6 @@ let produtoSelecionado = "";
 
 const usuario = JSON.parse(localStorage.getItem("usuario"));
 
-if (!usuario) {
-    window.location.href = "login.html";
-}
-
 if (usuario) {
     document.querySelectorAll(".preco").forEach(preco => {
         let valor = Number(preco.dataset.valor);
