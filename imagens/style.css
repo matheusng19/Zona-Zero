@@ -56,12 +56,12 @@ nav ul li a:hover {
 .divisoria {
     width: 100%;
     height: 20px;
-    background: url('arame.png') repeat-x center; /* Certifique-se que arame.png existe */
+    background: url('arame.png') repeat-x center; 
     background-size: contain;
     border-bottom: 2px solid #FFD700;
 }
 
-/* --- Produtos --- */
+/* --- Produtos (Vitrine) --- */
 .produtos {
     display: flex;
     justify-content: center;
@@ -78,10 +78,10 @@ nav ul li a:hover {
     text-align: center;
     color: white;
     font-family: 'Arial', sans-serif;
-    width: 200px; /* Largura fixa para alinhar melhor */
+    width: 200px; 
 }
 
-/* Container da imagem (Moldura) */
+/* Container da imagem (Moldura na vitrine) */
 .imagem-produto {
     width: 200px;
     height: 200px;
@@ -90,17 +90,17 @@ nav ul li a:hover {
     border-radius: 10px;
     margin-bottom: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Garante que a imagem não saia da borda arredondada */
+    overflow: hidden; 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Estilo da tag IMG dentro da div */
+/* Estilo da tag IMG dentro da div na vitrine */
 .imagem-produto img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Faz a imagem preencher o quadrado sem esticar */
+    object-fit: cover; 
 }
 
 /* Efeito do mouse */
@@ -168,6 +168,18 @@ footer {
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
 }
 
+/* === CORREÇÃO DA IMAGEM NO MODAL (Tamanho Reduzido) === */
+#modal-img {
+    width: 100%;            
+    max-width: 160px;       /* TRAVA: Agora é bem menor (era 250px) */
+    height: auto;           
+    max-height: 200px;      /* TRAVA: Altura menor também */
+    object-fit: contain;    
+    display: block;
+    margin: 0 auto 10px;    
+    border-radius: 8px;
+}
+
 .close {
     position: absolute;
     top: 10px;
@@ -186,7 +198,7 @@ input, select, textarea {
     border: 1px solid #444;
     color: white;
     border-radius: 4px;
-    box-sizing: border-box; /* Para não estourar a largura */
+    box-sizing: border-box; 
 }
 
 .modal-buttons button {
