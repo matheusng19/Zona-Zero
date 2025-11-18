@@ -9,9 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Carrega o carrinho do localStorage
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    /**
-     * Desenha os itens do carrinho na página
-     */
+    //Desenha os itens do carrinho na página
     function displayCartItems() {
         // Limpa o container (exceto a msg de carrinho vazio)
         cartContainer.innerHTML = ''; 
@@ -50,9 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    /**
-     * Remove um item do carrinho
-     */
+    //Remove um item do carrinho
     function removeItem(event) {
         const indexToRemove = parseInt(event.target.dataset.index);
         
@@ -67,9 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartCounterOnMainScript(); // Atualiza o contador no header
     }
 
-    /**
-     * Limpa o carrinho todo
-     */
+    //Limpa o carrinho todo
     function clearCart() {
         cart = [];
         saveCart();
@@ -77,22 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartCounterOnMainScript(); // Atualiza o contador no header
     }
 
-    /**
-     * Salva o estado atual do carrinho no localStorage
-     */
+    //Salva o estado atual do carrinho no localStorage
     function saveCart() {
         localStorage.setItem('cart', JSON.stringify(cart));
     }
 
-    /**
-     * Atualiza o contador no cabeçalho (chamando a função do script.js)
-     */
+    //Atualiza o contador no cabeçalho (chamando a função do script.js)
      function updateCartCounterOnMainScript() {
-        // O script.js também está carregado, então podemos chamar sua função
-        // (Isso é um truque simples, assumindo que a função está global ou acessível)
-        // Para ser mais robusto, o script.js precisaria expor sua função.
         
-        // Vamos apenas recarregar o contador baseado no localStorage
+        //recarregar o contador baseado no localStorage
         const cartCountEl = document.getElementById('cart-count');
         if (cartCountEl) {
             const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -100,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
      }
 
-    // --- INICIALIZAÇÃO da Página de Carrinho ---
+    // Inincialização da Página de Carrinho
     displayCartItems();
     limparCarrinhoBtn.addEventListener('click', clearCart);
 

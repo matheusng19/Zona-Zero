@@ -53,7 +53,7 @@ header {
     background-color: #333;
 }
 
-/* Conteúdo principal */
+/*principal */
 main {
     flex: 1;
     display: flex;
@@ -61,7 +61,7 @@ main {
     align-items: center;
 }
 
-/* Caixa de login */
+/*caixa de login */
 .login-box {
     background-color: #fff;
     padding: 2rem 2.5rem;

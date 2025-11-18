@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // --- 1. Variáveis Globais e Seletores ---
+    //variáveis e seletores
     let produtoSelecionado = "";
-    const modal = document.getElementById("modal-produto");
-    const modalImg = document.getElementById("modal-img"); // A imagem do modal
-    const modalNome = document.getElementById("nome-produto"); // O título do modal
-    const modalPagamento = document.getElementById("modal-pagamento");
+    const modal = document.getElementById("modal-produto"); // O popup principal
+    const modalImg = document.getElementById("modal-img"); 
+    const modalNome = document.getElementById("nome-produto"); 
+    const modalPagamento = document.getElementById("modal-pagamento"); // Popup de checkout
 
-    // Atualiza contador ao carregar
+    // quantos itens tem no carrinho
     atualizarContadorCarrinho();
 
-    // --- 2. Lógica de Preço com Login (Mantida do seu código) ---
+    //desconto para quem já tem conta
     const usuario = JSON.parse(localStorage.getItem("usuario"));
     if (usuario) {
         document.querySelectorAll(".preco").forEach(preco => {
@@ -25,34 +25,30 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- 3. ABRIR O MODAL (Onde a mágica da imagem acontece) ---
+    //popup do produto quando clica em COMPRAR
     document.querySelectorAll(".btn-comprar").forEach(btn => {
         btn.addEventListener("click", (e) => {
-            // Pega a div pai do botão clicado
+            // Pega as infos do produto (nome e imagem)
             const produtoDiv = btn.closest('.produto');
-            
-            // Pega o nome (primeiro <p> dentro da div produto)
             const nomeProduto = produtoDiv.querySelector('p').textContent.trim();
-            
-            // Pega o caminho da imagem do atributo 'data-img' do botão
             const caminhoImagem = btn.getAttribute("data-img");
 
-            // Atualiza as variáveis globais e o HTML do Modal
+            // Coloca as infos na janela pop-up
             produtoSelecionado = nomeProduto;
             modalNome.textContent = nomeProduto;
             
-            // AQUI É A CORREÇÃO PRINCIPAL:
+            // Colocando a foto no modal
             if (modalImg) {
-                modalImg.src = caminhoImagem; // Coloca a foto no modal
-                modalImg.style.display = "block"; // Garante que ela apareça
+                modalImg.src = caminhoImagem; 
+                modalImg.style.display = "block";
             }
 
-            // Abre o modal
+            // Mostra o modal!
             modal.style.display = "flex";
         });
     });
 
-    // --- 4. Fechar Modais ---
+    // Fechar os popups
     document.getElementById("closeModalProduto").onclick = () => {
         modal.style.display = "none";
     };
@@ -67,11 +63,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (event.target == modalPagamento) modalPagamento.style.display = "none";
     };
 
-    // --- 5. Adicionar ao Carrinho ---
+    //Adicionar ao Carrinho
     document.querySelector(".btn-carrinho").onclick = () => {
         const tamanho = document.getElementById("tamanho").value;
         const quantidade = Number(document.getElementById("quantidade").value);
-        // Tente pegar o preço dinamicamente se possível, aqui está fixo como no seu script
+        // Preço fixo por enquanto
         const preco = 69.99; 
 
         const produto = {
@@ -79,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
             tamanho,
             quantidade,
             preco,
-            imagem: modalImg.src // Salva a imagem no carrinho também se quiser
+            imagem: modalImg.src
         };
 
         let carrinhoAtual = JSON.parse(localStorage.getItem("carrinho")) || [];
@@ -91,13 +87,13 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.style.display = "none";
     };
 
-    // --- 6. Finalizar Compra (Ir para Pagamento) ---
+    // Ir para o pagamento
     document.querySelector(".btn-finalizar").onclick = () => {
         modal.style.display = "none";
         modalPagamento.style.display = "flex";
     };
 
-    // --- 7. WhatsApp ---
+    //Finalizar no WhatsApp
     document.getElementById("btnWhatsapp").onclick = () => {
         const pagamento = document.getElementById("pagamento").value;
         const endereco = document.getElementById("endereco").value;
@@ -118,13 +114,12 @@ document.addEventListener("DOMContentLoaded", () => {
             "📍 *Endereço:* " + endereco + "\n\n" +
             "Gostaria de confirmar meu pedido.";
 
-        // ATENÇÃO: Troque pelo seu número real abaixo
         const numeroLoja = "5581999999999"; 
         const url = "https://wa.me/" + numeroLoja + "?text=" + encodeURIComponent(mensagem);
         window.open(url, "_blank");
     };
 
-    // --- Funções Auxiliares ---
+    // Funções Auxiliares
     function atualizarContadorCarrinho() {
         const carrinhoAtual = JSON.parse(localStorage.getItem("carrinho")) || [];
         const cartCount = document.getElementById("cart-count");

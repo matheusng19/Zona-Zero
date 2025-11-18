@@ -1,4 +1,4 @@
-/* --- Global --- */
+/*global */
 body {
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-/* --- Cabeçalho --- */
+/*cabeçalho*/
 header {
     display: flex;
     justify-content: space-between;
@@ -52,7 +52,7 @@ nav ul li a:hover {
     color: #FFD700;
 }
 
-/* --- Divisória --- */
+/* divisória*/
 .divisoria {
     width: 100%;
     height: 20px;
@@ -61,7 +61,7 @@ nav ul li a:hover {
     border-bottom: 2px solid #FFD700;
 }
 
-/* --- Produtos (Vitrine) --- */
+/* pordutos */
 .produtos {
     display: flex;
     justify-content: center;
@@ -81,7 +81,7 @@ nav ul li a:hover {
     width: 200px; 
 }
 
-/* Container da imagem (Moldura na vitrine) */
+/*conteiner da imagem*/
 .imagem-produto {
     width: 200px;
     height: 200px;
@@ -103,7 +103,7 @@ nav ul li a:hover {
     object-fit: cover; 
 }
 
-/* Efeito do mouse */
+/*efeito do mouse */
 .imagem-produto:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px #FFD70044;
@@ -115,7 +115,7 @@ nav ul li a:hover {
     margin: 5px 0;
 }
 
-/* Botão Comprar da Vitrine */
+/* Botão Comprar */
 button.btn-comprar {
     padding: 10px 20px;
     background-color: #FFD700;
@@ -132,7 +132,7 @@ button.btn-comprar:hover {
     background-color: #e6c200;
 }
 
-/* --- Rodapé --- */
+/*Rodapé*/
 footer {
     background-color: #000;
     text-align: center;
@@ -141,7 +141,7 @@ footer {
     border-top: 2px solid #FFD700;
 }
 
-/* --- MODAIS (Janelas Flutuantes) --- */
+/*modais*/
 .modal {
     display: none; /* Escondido por padrão */
     position: fixed;
@@ -168,12 +168,12 @@ footer {
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
 }
 
-/* === CORREÇÃO DA IMAGEM NO MODAL (Tamanho Reduzido) === */
+/* tamanho da imagem no modal*/
 #modal-img {
     width: 100%;            
-    max-width: 160px;       /* TRAVA: Agora é bem menor (era 250px) */
+    max-width: 160px;       
     height: auto;           
-    max-height: 200px;      /* TRAVA: Altura menor também */
+    max-height: 200px;      
     object-fit: contain;    
     display: block;
     margin: 0 auto 10px;    
@@ -224,7 +224,7 @@ input, select, textarea {
 }
 .btn-whatsapp:hover { background-color: #20b857; }
 
-/* --- Responsividade --- */
+/*Responsividade*/
 @media (max-width: 768px) {
     header {
         flex-direction: column;
