@@ -1,25 +1,187 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>Carrinho - Zona Zero</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=999">
+    <script src="script.js" defer></script>
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            font-family: Arial, sans-serif;
+            color: white;
+            font-size: medium;
+            text-align: center;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #FFD700;
+            background: #000;
+
+        }
+
+        /* container do carrinho CENTRALIZADO */
+        .carrinho-container {
+            width: 90%;
+            max-width: 420px;
+            /* menor */
+            margin: 30px auto;
+            /* centralizado */
+            padding: 15px;
+            background: #111;
+            border: 2px solid #FFD700;
+            border-radius: 12px;
+            font-size: 14px;
+            margin-top: 170px;
+            /* fonte menor */
+            position: relative;
+        }
+
+        /* TOPO COM SETA E X */
+        .topo-carrinho {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 15px;
+            align-items: center;
+        }
+
+        .voltar {
+            font-size: 28px;
+            color: #FFD700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .voltar:hover {
+            color: #e6c000;
+            transform: scale(1.2);
+        }
+
+        .fechar {
+            font-size: 28px;
+            color: #FFD700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .fechar:hover {
+            color: #e6c000;
+            transform: scale(1.2);
+        }
+
+        /* título menor */
+        .carrinho-container h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+
+        /* item do carrinho com menos espaços */
+        .carrinho-item {
+            background: #1a1a1a;
+            padding: 10px;
+            border: 1px solid #FFD70055;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            margin-top: 5px;
+        }
+
+        /* diminuir espaço entre linhas */
+        .carrinho-item p {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            line-height: 1.2;
+            font-size: 13px;
+            /* fonte menor */
+        }
+
+        /* botão remover menor */
+        .carrinho-item button {
+            padding: 6px 12px;
+            font-size: 13px;
+            margin-top: 8px;
+            background-color: #FFD700;
+            border: none;
+            border-radius: 5px;
+            color: #000;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .carrinho-item button:hover {
+            background-color: #e6c000;
+            transform: scale(1.05);
+        }
+
+        /* total */
+        #total {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        /* botão whatsapp menor */
+        .btn-whatsapp {
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 15px;
+            width: 90%;
+            background: linear-gradient(135deg, #FFD700 0%, #e6c000 100%);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-weight: 800;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-whatsapp:hover {
+            background: linear-gradient(135deg, #e6c000 0%, #FFD700 100%);
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(255, 215, 0, 0.7);
+        }
+
+        .btn-whatsapp:active {
+            transform: scale(0.95);
+        }
+        
+    </style>
 </head>
 
 <body>
-    <header>
-        <h1 style="color:#FFD700;">Meu Carrinho</h1>
-    </header>
-
     <div class="carrinho-container">
+        <div class="topo-carrinho">
+            <span class="voltar" onclick="history.back()">←</span>
+            <span class="fechar" onclick="history.back()">×</span>
+        </div>
+
         <h2>Itens no carrinho</h2>
+        <br>
         <div id="lista-carrinho"></div>
         <h3 id="total">Total: R$ 0,00</h3>
         <button id="btnFinalizarCarrinho" class="btn-whatsapp">Finalizar no WhatsApp</button>
     </div>
 
     <script>
-        
+
         function renderizarCarrinho() {
             const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
             const lista = document.getElementById("lista-carrinho");
@@ -53,7 +215,7 @@
             totalElement.textContent = `Total: R$ ${total.toFixed(2)}`;
         }
 
-     
+
         function removerItem(index) {
             let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
             carrinho.splice(index, 1);
@@ -61,7 +223,7 @@
             renderizarCarrinho();
         }
 
-       
+
         document.getElementById("btnFinalizarCarrinho").onclick = () => {
             const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
             if (carrinho.length === 0) {
@@ -78,11 +240,14 @@
             });
             mensagem += `Total: R$ ${total.toFixed(2)}\n\nGostaria de confirmar meu pedido.`;
 
-            const url = "https://wa.me/55SEU_NUMERO_AQUI?text=" + encodeURIComponent(mensagem);
+            const url = "https://wa.me/5581997718273?text=" + encodeURIComponent(mensagem);
+
             window.open(url, "_blank");
         };
 
         document.addEventListener("DOMContentLoaded", renderizarCarrinho);
     </script>
+
 </body>
+
 </html>
