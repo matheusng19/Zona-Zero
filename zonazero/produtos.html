@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zona Zero - Street Wear</title>
+  <link rel="stylesheet" href="style.css?v=2">
+</head>
+
+<body>
+  <script src="script.js" defer></script>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">
+      <img src="./img/Logo1-removebg-preview.png" class="logo-img" alt="Logo Zona Zero">
+    </div>
+
+    <nav>
+      <ul>
+        <li>
+          <a href="carrinho.html">Carrinho
+            <span id="cart-count" class="cart-count">0</span>
+          </a>
+        </li>
+        <li><a href="index.html">Sair</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Divisória -->
+  <div class="divisoria"></div>
+
+  <h1>NOSSOS PRODUTOS</h1>
+
+  <!-- SEÇÃO DE FILTROS -->
+  <div class="filtros-section">
+    <!-- Pesquisa -->
+    <div class="search-container">
+      <input type="text" id="search-input" class="search-input" placeholder="🔍 Pesquisar produtos...">
+    </div>
+
+    <!-- Categorias -->
+    <div class="categorias-container">
+      <button class="cat-btn cat-active" data-categoria="todos">Todos</button>
+      <button class="cat-btn" data-categoria="camisetas">Camisetas</button>
+      <button class="cat-btn" data-categoria="adesivos">Adesivos</button>
+      <button class="cat-btn" data-categoria="chaveiros">Chaveiros</button>
+    </div>
+  </div>
+
+  <!-- Seção de produtos -->
+  <section class="produtos">
+    <div class="produto" data-categoria="camisetas" data-nome="Camiseta Oversized Preta">
+      <div class="imagem-produto">
+        <img src="./img/Camiseta Preta com Logo ZZ.png">
+      </div>
+      <p>Camiseta Oversized Preta</p>
+      <p class="preco" data-valor="69.99">R$69,99</p>
+      <button class="btn-comprar" data-img="./img/Camiseta Preta com Logo ZZ.png" data-nome="Camiseta Oversized Preta"
+        data-preco="69.99">Comprar</button>
+    </div>
+
+    <div class="produto" data-categoria="camisetas" data-nome="Camisa Oversized Cinza">
+      <div class="imagem-produto">
+        <img src="./img/Camiseta Cinza com Estampa de Fio Maranhão.png">
+      </div>
+      <p>Camisa Oversized Cinza</p>
+      <p class="preco" data-valor="69.99">R$69,99</p>
+      <button class="btn-comprar" data-img="./img/Camiseta Cinza com Estampa de Fio Maranhão.png"
+        data-nome="Camisa Oversized Cinza" data-preco="69.99">Comprar</button>
+    </div>
+
+    <div class="produto" data-categoria="camisetas" data-nome="Camisa Branca Oversized">
+      <div class="imagem-produto">
+        <img src="./img/Camiseta Estilo Streetwear com ZZ.png">
+      </div>
+      <p>Camisa Branca Oversized</p>
+      <p class="preco" data-valor="69.99">R$69,99</p>
+      <button class="btn-comprar" data-img="./img/Camiseta Estilo Streetwear com ZZ.png"
+        data-nome="Camisa Branca Oversized" data-preco="69.99">Comprar</button>
+    </div>
+
+    <div class="produto" data-categoria="adesivos" data-nome="Kit 4 Adesivos Street Art">
+      <div class="imagem-produto">
+        <img src="./img/4 adesivos.jpeg">
+      </div>
+      <p>Kit 4 Adesivos Street Art</p>
+      <p class="preco" data-valor="19.90">R$19,90</p>
+      <button class="btn-comprar" data-img="./img/4 adesivos.jpeg" data-nome="Kit 4 Adesivos Street Art"
+        data-preco="19.90">Comprar</button>
+    </div>
+
+    <div class="produto" data-categoria="chaveiros" data-nome="Chaveiro Zona Zero Streetwear">
+      <div class="imagem-produto">
+        <img src="./img/chaveiro.jpeg">
+      </div>
+      <p>Chaveiro Zona Zero Streetwear</p>
+      <p class="preco" data-valor="14.99">R$14,99</p>
+      <button class="btn-comprar" data-img="./img/chaveiro.jpeg" data-nome="Chaveiro Zona Zero Streetwear"
+        data-preco="14.99">Comprar</button>
+    </div>
+
+    <div class="produto" data-categoria="adesivos" data-nome="Adesivo Zero">
+      <div class="imagem-produto">
+        <img src="./img/adesivo.jpeg">
+      </div>
+      <p>Adesivo Zero</p>
+      <p class="preco" data-valor="5.00">R$5,00</p>
+      <button class="btn-comprar" data-img="./img/adesivo.jpeg" data-nome="Adesivo Zero"
+        data-preco="5.00">Comprar</button>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Zona Zero - Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- MODAL DE PRODUTO -->
+  <div id="modal-produto" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModalProduto">&times;</span>
+
+      <h2>Detalhes do Produto</h2>
+      <p id="nome-produto"></p>
+      <img id="modal-img" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
+
+      <label>Tamanho:</label>
+      <select class="tamanho">
+        <option>P</option>
+        <option>M</option>
+        <option>G</option>
+        <option>GG</option>
+      </select>
+      <br>
+      <label>Quantidade:</label>
+      <input class="quantidade" type="number" id="quantidade" min="1" value="1">
+
+      <div class="modal-buttons">
+        <button class="carrinho" onclick="window.location.href='produtos.html'">
+          Adicionar ao Carrinho
+        </button>
+
+        <button class="btn-finalizar" id="btnAbrirPagamento">Finalizar Compra</button>
+      </div>
+
+    </div>
+
+    <!-- MODAL DE PAGAMENTO -->
+    <div id="modal-pagamento" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeModalPagamento">&times;</span>
+
+        <h2>Finalizar Compra</h2>
+
+        <label>Forma de Pagamento:</label>
+        <select class="pagamento">
+          <option>Pix</option>
+          <option>Crédito</option>
+          <option>Débito</option>
+          <option>Dinheiro</option>
+        </select>
+        <br>
+        <label>Endereço de Entrega:</label>
+        <textarea class="entrega" id="endereco" rows="3" placeholder="Rua, número, bairro, cidade..."></textarea>
+
+        <button class="btn-whatsapp" id="btnWhatsapp">Finalizar no WhatsApp</button>
+      </div>
+    </div>
+
+    <div id="added-message">Produto adicionado!</div>
+    <!-- Toast de mensagem -->
+    <div id="toast" class="toast hidden">Produto adicionado ao carrinho!</div>
+
+    <style>
+      .toast {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #0a0a0a;
+        color: #FFD700;
+        padding: 12px 18px;
+        border-radius: 10px;
+        font-size: 15px;
+        opacity: 0;
+        transition: opacity .4s ease, transform .4s ease;
+        transform: translateY(20px);
+        z-index: 99999;
+        border: 1px solid #FFD70055;
+      }
+
+      .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+
+    <script>
+      function showToast(msg) {
+        const toast = document.getElementById("toast");
+        toast.textContent = msg;
+        toast.classList.add("show");
+
+        setTimeout(() => {
+          toast.classList.remove("show");
+        }, 2500);
+      }
+
+      // PESQUISA
+      document.getElementById("search-input").addEventListener("input", function () {
+        const termo = this.value.toLowerCase();
+        document.querySelectorAll(".produto").forEach(produto => {
+          const nome = produto.getAttribute("data-nome").toLowerCase();
+          produto.style.display = nome.includes(termo) ? "flex" : "none";
+        });
+      });
+
+      // CATEGORIAS
+      document.querySelectorAll(".cat-btn").forEach(btn => {
+        btn.addEventListener("click", function () {
+          const categoria = this.getAttribute("data-categoria");
+
+          // Remove active de todos os botões
+          document.querySelectorAll(".cat-btn").forEach(b => b.classList.remove("cat-active"));
+          // Adiciona ao clicado
+          this.classList.add("cat-active");
+
+          // Filtra produtos
+          document.querySelectorAll(".produto").forEach(produto => {
+            const prodCategoria = produto.getAttribute("data-categoria");
+            produto.style.display = (categoria === "todos" || prodCategoria === categoria) ? "flex" : "none";
+          });
+        });
+      });
+
+      document.querySelectorAll(".preco").forEach(preco => {
+        let valorOriginal = Number(preco.dataset.valor);
+        let descontado = valorOriginal * 0.5; // 50%
+
+        preco.innerHTML = `
+        <span style="color: red; text-decoration: line-through; font-size: 14px; margin-right: 6px;">
+          R$${valorOriginal.toFixed(2).replace(".", ",")}
+        </span>
+
+        <span style="color: #FFD700; font-weight: bold; font-size: 18px;">
+          R$${descontado.toFixed(2).replace(".", ",")}
+        </span>
+      `;
+      });
+       document.getElementById("btnFinalizarCarrinho").onclick = () => {
+            const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+            if (carrinho.length === 0) {
+                alert("Seu carrinho está vazio!");
+                return;
+            }
+
+            let mensagem = "Pedido Zona Zero Streetwear\n\n";
+            let total = 0;
+            carrinho.forEach(item => {
+                const subtotal = item.preco * item.quantidade;
+                total += subtotal;
+                mensagem += `Produto: ${item.produto}\nTamanho: ${item.tamanho}\nQuantidade: ${item.quantidade}\nPreço unitário: R$ ${item.preco.toFixed(2)}\nSubtotal: R$ ${subtotal.toFixed(2)}\n\n`;
+            });
+            mensagem += `Total: R$ ${total.toFixed(2)}\n\nGostaria de confirmar meu pedido.`;
+
+            const url = "https://wa.me/5581997718273?text=" + encodeURIComponent(mensagem);
+
+            window.open(url, "_blank");
+        };
+
+
+    </script>
+</body>
+
+</html>
