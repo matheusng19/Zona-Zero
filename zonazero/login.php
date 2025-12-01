@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+// captura e apaga a flash (se existir)
+$flash = '';
+if (isset($_SESSION['flash'])) {
+    $flash = $_SESSION['flash'];
+    unset($_SESSION['flash']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -89,28 +100,36 @@
         }
     </style>
 </head>
-
 <body>
 
-    <div class="login-box">
-        <h2>LOGIN</h2>
+<div class="login-box">
 
-        <form>
-            <label>E-mail:</label>
-            <input type="email" placeholder="Digite seu e-mail" required>
+    <?php if ($flash !== ''): ?>
+    <p style="color:#00ff00; text-align:center; font-weight:bold; margin-bottom:10px;">
+        <?php echo htmlspecialchars($flash); ?>
+    </p>
+    <?php endif; 
+    ?>
 
-            <label>Senha:</label>
-            <input type="password" placeholder="Digite sua senha" required>
 
-            <button onclick="fazerLogin()">Entrar</button>
+    <h2>LOGIN</h2>
 
-        </form>
+    <form action="produtos.html" method="POST">
+        <label>E-mail:</label>
+        <input type="email" name="email" placeholder="Digite seu e-mail" required>
 
-        <div class="links">
-            <a href="#">Esqueci minha senha</a><br>
-            <a href="#">Criar conta</a>
-        </div>
+        <label>Senha:</label>
+        <input type="password" name="senha" placeholder="Digite sua senha" required>
+
+        <button type="submit" class="btn-login">Entrar</button>
+    </form>
+
+    <div class="links">
+        <a href="esquecisenha.php">Esqueci minha senha</a><br>
+        <a href="criarconta.php">Criar conta</a>
     </div>
+
+</div>
 
 </body>
 </html>
